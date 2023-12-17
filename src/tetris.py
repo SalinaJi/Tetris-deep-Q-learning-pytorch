@@ -151,7 +151,7 @@ class Tetris:
         self.current_pos = {"x": self.width // 2 - len(self.piece[0]) // 2,
                             "y": 0
                             }
-        if self.check_collision(self.piece, self.current_pos):
+        if self.cleared_lines < self.lines_to_clear and self.check_collision(self.piece, self.current_pos):
             self.gameover = True
             return -1000
         return 0
@@ -230,7 +230,7 @@ class Tetris:
         self.cleared_lines += lines_cleared
 
         # Check for win or loss conditions
-        if self.tetrominoes >= self.pieces_to_spawn or self.gameover:
+        if self.tetrominoes >= self.pieces_to_spawn or (self.gameover and self.cleared_lines < self.lines_to_clear):
             score -= 1000
             self.gameover = True
         elif self.cleared_lines >= self.lines_to_clear:
