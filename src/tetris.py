@@ -147,7 +147,7 @@ class Tetris:
         lines_cleared, board = self.check_cleared_rows(board)
         holes = self.get_holes(board)
         bumpiness, height = self.get_bumpiness_and_height(board)
-        total = [x for row in board for x in row] + [lines_cleared, self.tetrominoes]
+        total = [1 if x > 0 else 0 for row in board for x in row] + [lines_cleared, self.tetrominoes, self.cleared_lines]
 
         # return torch.FloatTensor([lines_cleared, holes, bumpiness, height])
         return torch.FloatTensor(total)

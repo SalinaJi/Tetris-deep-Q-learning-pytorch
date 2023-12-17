@@ -15,8 +15,7 @@ class DeepQNetwork(nn.Module):
         self.conv3 = nn.Conv2d(64, 1, kernel_size=3, stride=1, padding=1)
         self.relu3 = nn.ReLU(inplace=True)
 
-        # Adjusted the input size based on your final feature map size
-        self.fc1 = nn.Linear((1 * 20 * 10) + 2, 128)
+        self.fc1 = nn.Linear((1 * 20 * 10) + 3, 128)
         self.relu4 = nn.ReLU(inplace=True)
         self.fc2 = nn.Linear(128, 64)  # Additional layer
         self.relu5 = nn.ReLU(inplace=True)
@@ -35,7 +34,7 @@ class DeepQNetwork(nn.Module):
     def forward(self, x):
         # Ensure that x has at least two dimensions
         x_image = x[:, :200].view(-1, 1, 20, 10)
-        x_extra = x[:, 200:].view(-1, 2)  # Extract the last 2 elements
+        x_extra = x[:, 200:].view(-1, 3)  # Extract the last 2 elements
 
         # Process the image only if it is not None
         if x_image is not None:
