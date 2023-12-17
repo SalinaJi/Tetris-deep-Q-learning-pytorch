@@ -59,6 +59,8 @@ class Tetris:
         self.score = 0
         self.tetrominoes = 0
         self.cleared_lines = 0
+        self.lines_to_clear = 15  # Set the goal to clear 15 lines
+        self.pieces_to_spawn = 40  # Set the number of pieces to spawn to 40
         self.bag = list(range(len(self.pieces)))
         random.shuffle(self.bag)
         self.ind = self.bag.pop()
@@ -83,8 +85,10 @@ class Tetris:
         lines_cleared, board = self.check_cleared_rows(board)
         holes = self.get_holes(board)
         bumpiness, height = self.get_bumpiness_and_height(board)
+        total = [x for row in board for x in row]+[lines_cleared, self.tetrominoes]
 
-        return torch.FloatTensor([lines_cleared, holes, bumpiness, height])
+        # return torch.FloatTensor([lines_cleared, holes, bumpiness, height])
+        return torch.FloatTensor(total)
 
     def get_holes(self, board):
         num_holes = 0
@@ -149,6 +153,8 @@ class Tetris:
                             }
         if self.check_collision(self.piece, self.current_pos):
             self.gameover = True
+            return -1000
+        return 0
 
     def check_collision(self, piece, pos):
         future_y = pos["y"] + 1
@@ -220,13 +226,20 @@ class Tetris:
 
         lines_cleared, self.board = self.check_cleared_rows(self.board)
         score = 1 + (lines_cleared ** 2) * self.width
-        self.score += score
         self.tetrominoes += 1
         self.cleared_lines += lines_cleared
+
+        # Check for win or loss conditions
+        if self.tetrominoes >= self.pieces_to_spawn or self.gameover:
+            score -= 1000
+            self.gameover = True
+        elif self.cleared_lines >= self.lines_to_clear:
+            self.gameover = True
+
+        # Start a new piece if the game is not over
         if not self.gameover:
-            self.new_piece()
-        if self.gameover:
-            self.score -= 2
+            score += self.new_piece()
+        self.score += score
 
         return score, self.gameover
 

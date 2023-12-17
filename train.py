@@ -1,19 +1,17 @@
 """
 @author: Viet Nguyen <nhviet1009@gmail.com>
 """
-import argparse
-import os
-import shutil
-from random import random, randint, sample
-
-import numpy as np
 import torch
 import torch.nn as nn
 from tensorboardX import SummaryWriter
-
+import os
+import shutil
+import numpy as np
+from collections import deque
+from random import random, randint, sample
 from src.deep_q_network import DeepQNetwork
 from src.tetris import Tetris
-from collections import deque
+import argparse
 
 
 def get_args():
@@ -31,7 +29,7 @@ def get_args():
     parser.add_argument("--num_epochs", type=int, default=3000)
     parser.add_argument("--save_interval", type=int, default=1000)
     parser.add_argument("--replay_memory_size", type=int, default=30000,
-                        help="Number of epoches between testing phases")
+                        help="Number of epochs between testing phases")
     parser.add_argument("--log_path", type=str, default="tensorboard")
     parser.add_argument("--saved_path", type=str, default="trained_models")
 
