@@ -22,6 +22,68 @@ class Tetris:
         (254, 151, 32),
         (0, 0, 255)
     ]
+    boards = [
+        [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 7],
+         [0, 0, 0, 0, 0, 0, 0, 0, 1, 0],
+         [0, 0, 0, 0, 0, 0, 0, 6, 0, 0],
+         [1, 2, 6, 3, 5, 7, 3, 0, 0, 0],
+         [0, 0, 0, 0, 0, 4, 0, 0, 0, 0],
+         [0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+         [0, 0, 0, 3, 0, 0, 0, 0, 0, 0]],
+        [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 4, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 6, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 1, 5, 1, 4, 7, 2, 3],
+         [0, 0, 0, 0, 3, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 5, 0, 0, 0]],
+        [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [2, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [5, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+         [0, 7, 6, 0, 0, 0, 0, 0, 0, 0],
+         [0, 0, 0, 1, 5, 1, 4, 7, 2, 3],
+         [0, 0, 0, 0, 3, 0, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 1, 0, 0, 0, 0],
+         [0, 0, 0, 0, 0, 0, 5, 0, 0, 0]]
+    ]
 
     pieces = [
         [[1, 1],
@@ -55,7 +117,7 @@ class Tetris:
         self.reset()
 
     def reset(self):
-        self.board = [[0] * self.width for _ in range(self.height)]
+        self.board = Tetris.boards[random.randint(0, 2)]
         self.score = 0
         self.tetrominoes = 0
         self.cleared_lines = 0
@@ -85,7 +147,7 @@ class Tetris:
         lines_cleared, board = self.check_cleared_rows(board)
         holes = self.get_holes(board)
         bumpiness, height = self.get_bumpiness_and_height(board)
-        total = [x for row in board for x in row]+[lines_cleared, self.tetrominoes]
+        total = [x for row in board for x in row] + [lines_cleared, self.tetrominoes]
 
         # return torch.FloatTensor([lines_cleared, holes, bumpiness, height])
         return torch.FloatTensor(total)
@@ -240,6 +302,8 @@ class Tetris:
         if not self.gameover:
             score += self.new_piece()
         self.score += score
+        if render:
+            self.render(video)
 
         return score, self.gameover
 
@@ -266,17 +330,26 @@ class Tetris:
                     (self.width * self.block_size + int(self.block_size / 2), 2 * self.block_size),
                     fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1.0, color=self.text_color)
 
-        cv2.putText(img, "Pieces:", (self.width * self.block_size + int(self.block_size / 2), 4 * self.block_size),
+        cv2.putText(img, "Moves:", (self.width * self.block_size + int(self.block_size / 2), 4 * self.block_size),
                     fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1.0, color=self.text_color)
-        cv2.putText(img, str(self.tetrominoes),
+        cv2.putText(img, str(self.pieces_to_spawn-self.tetrominoes),
                     (self.width * self.block_size + int(self.block_size / 2), 5 * self.block_size),
                     fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1.0, color=self.text_color)
 
-        cv2.putText(img, "Lines:", (self.width * self.block_size + int(self.block_size / 2), 7 * self.block_size),
+        cv2.putText(img, "Goal:", (self.width * self.block_size + int(self.block_size / 2), 7 * self.block_size),
                     fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1.0, color=self.text_color)
-        cv2.putText(img, str(self.cleared_lines),
+        cv2.putText(img, str(self.lines_to_clear - self.cleared_lines),
                     (self.width * self.block_size + int(self.block_size / 2), 8 * self.block_size),
                     fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1.0, color=self.text_color)
+        if self.gameover:
+            if self.cleared_lines >= self.lines_to_clear:
+                cv2.putText(img, "Win !!!!",
+                            (self.width * self.block_size + int(self.block_size / 2), 10 * self.block_size),
+                            fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1.0, color=self.text_color)
+            else:
+                cv2.putText(img, "Lose !!!!",
+                            (self.width * self.block_size + int(self.block_size / 2), 10 * self.block_size),
+                            fontFace=cv2.FONT_HERSHEY_DUPLEX, fontScale=1.0, color=self.text_color)
 
         if video:
             video.write(img)
